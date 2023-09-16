@@ -50,7 +50,7 @@ export default function AssetPage() {
           <h1>{asset.name}</h1>
           <p>{asset.rank}</p>
           <p>{asset.symbol}</p>
-          <p>{asset.priceUsd}</p>
+          <p>${asset.priceUsd}</p>
         </div>
       )}
     </div>
