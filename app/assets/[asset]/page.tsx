@@ -44,13 +44,13 @@ export default function AssetPage() {
   }
   // Render the track details
   return (
-    <div>
-      <p>Asset data</p>
+    <div className="flex justify-center	items-center h-screen bg-white dark:bg-stone-900 dark:text-white">
       {asset && (
         <div>
           <h1>{asset.name}</h1>
           <p>{asset.rank}</p>
           <p>{asset.symbol}</p>
+          <p>{asset.priceUsd}</p>
         </div>
       )}
     </div>
