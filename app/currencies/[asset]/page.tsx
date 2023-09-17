@@ -102,11 +102,7 @@ export default function AssetPage() {
                 </svg>
               </div>
               <div className="stat-title">Current Price</div>
-              <div className="stat-value text-primary">
-                {!isNaN(parseFloat(asset.priceUsd))
-                  ? `$${parseFloat(asset.priceUsd).toFixed(2)}`
-                  : "N/A"}
-              </div>
+              <div className="stat-value text-primary">{asset.rank}</div>
               {/* <div className="stat-desc">21% more than last month</div> */}
             </div>
 
