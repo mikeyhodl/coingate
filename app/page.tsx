@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-base-200">
         <table className="table">
           {/* head */}
           <thead>

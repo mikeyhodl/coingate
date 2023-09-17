@@ -67,8 +67,8 @@ export default function AssetPage() {
           <div className="stats shadow">
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <div className="avatar online">
-                  <div className="w-16 rounded-full">
+                <div className="avatar">
+                  <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <Image
                       src={`https://cryptologos.cc/logos/${
                         asset.id

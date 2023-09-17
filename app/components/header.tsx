@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 export default function Test() {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 sticky top-0">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">CoinGate</a>
+          <Link href="/" className="btn btn-ghost normal-case text-xl">
+            CoinGate
+          </Link>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
