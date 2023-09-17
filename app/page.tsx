@@ -64,7 +64,7 @@ export default function Home() {
                   <Link href={`/currencies/${asset.id}`}>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
+                        <div className="rounded-full ring ring-success ring-offset-base-100 ring-offset-1 w-12 h-12">
                           <Image
                             src={`https://cryptologos.cc/logos/${
                               asset.id
