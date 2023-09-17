@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { number } from "prop-types";
+import Image from "next/image";
 // import Reloader from "@/app/components/reloader";
 import Loading from "@/app/components/loading";
 
@@ -45,10 +46,13 @@ export default function Home() {
             {assets.map((asset) => (
               <div className="w-full" key={asset.id}>
                 <Link href={`/currencies/${asset.id}`}>
-                  <img
+                  <Image
                     src={`https://cryptologos.cc/logos/${
                       asset.id
                     }-${asset.symbol.toLowerCase()}-logo.png`}
+                    alt={asset.symbol}
+                    height={500}
+                    width={500}
                     className="w-20 h-20 bg-zinc-300 rounded-lg dark:bg-zinc-600"
                   />
                   {/* <h1 className="text-2xl font-semibold text-zinc-800 dark:text-white lg:text-1xl mb-2.5">
