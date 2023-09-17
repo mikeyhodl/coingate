@@ -81,11 +81,7 @@ export default function AssetPage() {
                   </div>
                 </div>
               </div>
-              <div className="stat-value">
-                {!isNaN(parseFloat(asset.changePercent24Hr))
-                  ? `${parseFloat(asset.changePercent24Hr).toFixed(2)}%`
-                  : "N/A"}
-              </div>
+              <div className="stat-value">{asset.rank}</div>
               <div className="stat-title">24Hr Change</div>
               {/* <div className="stat-desc text-secondary">31 tasks remaining</div> */}
             </div>
