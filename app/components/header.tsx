@@ -3,11 +3,24 @@ import Link from "next/link";
 export default function Test() {
   return (
     <>
-      <div className="navbar bg-base-100 sticky top-0">
+      <div className="navbar bg-base-100 sticky top-0 z-30">
         <div className="flex-1">
-          <Link href="/" className="btn btn-ghost normal-case text-xl">
+          <Link href="/" className="btn btn-glass normal-case text-xl">
             CoinGate
           </Link>
+        </div>
+        <div className="navbar-start hidden lg:flex">
+          {/* <ul className="menu menu-horizontal px-1"> */}
+          {/* <li> */}
+          <a className="btn mr-2">Exchanges</a>
+          {/* </li> */}
+          {/* <li> */}
+          <a className="btn mr-2">Markets</a>
+          {/* </li> */}
+          {/* <li> */}
+          <a className="btn mr-2">History</a>
+          {/* </li> */}
+          {/* </ul> */}
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
@@ -16,30 +29,6 @@ export default function Test() {
               placeholder="Search"
               className="input input-bordered w-24 md:w-auto"
             />
-          </div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
