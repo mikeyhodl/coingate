@@ -14,9 +14,9 @@ interface Asset {
   supply: number;
   maxSupply: number;
   marketCapUsd: number;
-  volumeUsd24Hr: Number;
-  priceUsd: number;
-  changePercent24Hr: number;
+  volumeUsd24Hr: number;
+  priceUsd: string;
+  changePercent24Hr: string;
   vwap24Hr: number;
   explorer: string;
 }
@@ -77,8 +77,12 @@ export default function AssetPage() {
                   </div>
                 </div>
               </div>
-              <div className="stat-value">{asset.rank}</div>
               <div className="stat-title">24Hr Change</div>
+              <div className="stat-value">
+                {!isNaN(parseFloat(asset.changePercent24Hr))
+                  ? `${parseFloat(asset.changePercent24Hr).toFixed(2)}%`
+                  : "N/A"}
+              </div>
               {/* <div className="stat-desc text-secondary">31 tasks remaining</div> */}
             </div>
             <div className="stat">
@@ -98,7 +102,15 @@ export default function AssetPage() {
                 </svg>
               </div>
               <div className="stat-title">Current Price</div>
-              <div className="stat-value text-primary">{asset.rank}</div>
+              <div className="stat-value text-primary">
+                $
+                {!isNaN(parseFloat(asset.priceUsd))
+                  ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })
+                  : "N/A"}
+              </div>
               {/* <div className="stat-desc">21% more than last month</div> */}
             </div>
 
@@ -118,7 +130,7 @@ export default function AssetPage() {
                   ></path>
                 </svg>
               </div> */}
-              <div className="stat-title">Page Views</div>
+              <div className="stat-title">Explorer</div>
               <a href={asset.explorer} target="_blank">
                 <button className="btn btn-outline btn-accent mt-2">
                   {" "}

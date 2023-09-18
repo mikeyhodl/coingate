@@ -9,16 +9,16 @@ import Loading from "@/app/components/loading";
 
 interface Asset {
   id: string;
-  rank: number;
+  rank: string;
   symbol: string;
   name: string;
-  supply: number;
-  maxSupply: number;
-  marketCapUsd: number;
-  volumeUsd24Hr: Number;
-  priceUsd: number;
-  changePercent24Hr: number;
-  vwap24Hr: number;
+  supply: string;
+  maxSupply: string;
+  marketCapUsd: string;
+  volumeUsd24Hr: string;
+  priceUsd: string;
+  changePercent24Hr: string;
+  vwap24Hr: string;
   explorer: string;
 }
 
@@ -43,14 +43,16 @@ export default function Home() {
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="font-bold">
               <th>
-                <label></label>
+                <label>rank</label>
               </th>
               <th>Currency</th>
               <th>Price</th>
               <th>24 Hrs Change %</th>
               <th>Supply</th>
+              <th>Market Cap</th>
+              <th>Volume(24hrs)</th>
             </tr>
           </thead>
           <tbody>
@@ -83,19 +85,51 @@ export default function Home() {
                     </div>
                   </Link>
                 </td>
-                <td>
-                  $ {asset.priceUsd}
+                <td className="font-bold">
+                  ${" "}
+                  {!isNaN(parseFloat(asset.priceUsd))
+                    ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })
+                    : "N/A"}
                   {/* <br />
                   <span className="badge badge-ghost badge-sm">
                     Desktop Support Technician
                   </span> */}
                 </td>
-                <td>{asset.changePercent24Hr}</td>
-                <th>
-                  <button className="btn btn-ghost btn-xs">
-                    {asset.supply}
-                  </button>
-                </th>
+                <td className="font-medium">
+                  {!isNaN(parseFloat(asset.changePercent24Hr))
+                    ? `${parseFloat(asset.changePercent24Hr).toFixed(2)}`
+                    : "N/A"}
+                </td>
+                <td className="font-medium">
+                  {!isNaN(parseFloat(asset.supply))
+                    ? parseFloat(asset.supply).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })
+                    : "N/A"}
+                </td>
+                <td className="font-medium">
+                  {!isNaN(parseFloat(asset.marketCapUsd))
+                    ? parseFloat(asset.marketCapUsd).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })
+                    : "N/A"}
+                </td>
+                <td className="font-medium">
+                  {!isNaN(parseFloat(asset.volumeUsd24Hr))
+                    ? parseFloat(asset.volumeUsd24Hr).toLocaleString(
+                        undefined,
+                        {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }
+                      )
+                    : "N/A"}
+                </td>
               </tr>
             ))}
           </tbody>

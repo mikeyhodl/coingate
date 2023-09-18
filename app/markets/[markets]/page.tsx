@@ -12,7 +12,7 @@ interface Asset {
   quoteSymbol: string;
   volumeUsd24Hr: number;
   priceUsd: number;
-  volumePercent: Number;
+  volumePercent: number;
 }
 
 export default function MarketsPage() {
