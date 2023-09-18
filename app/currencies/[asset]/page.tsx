@@ -64,7 +64,13 @@ export default function AssetPage() {
             <div className="stat">
               <div className="stat-figure text-secondary">
                 <div className="avatar">
-                  <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div
+                    className={`${
+                      parseFloat(asset.changePercent24Hr) > 0
+                        ? "ring-success"
+                        : "ring-error"
+                    } rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12`}
+                  >
                     <Image
                       src={`https://cryptologos.cc/logos/${
                         asset.id
@@ -78,7 +84,13 @@ export default function AssetPage() {
                 </div>
               </div>
               <div className="stat-title">24Hr Change</div>
-              <div className="stat-value">
+              <div
+                className={`${
+                  parseFloat(asset.changePercent24Hr) > 0
+                    ? "text-green-500"
+                    : "text-red-600"
+                } stat-value`}
+              >
                 {!isNaN(parseFloat(asset.changePercent24Hr))
                   ? `${parseFloat(asset.changePercent24Hr).toFixed(2)}%`
                   : "N/A"}

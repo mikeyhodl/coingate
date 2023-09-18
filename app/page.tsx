@@ -66,7 +66,8 @@ export default function Home() {
                   <Link href={`/currencies/${asset.id}`}>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
-                        <div className="rounded-full ring ring-success ring-offset-base-100 ring-offset-1 w-12 h-12">
+                        {/* <div className="rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12"> */}
+                        <div className={`${ parseFloat(asset.changePercent24Hr) > 0 ? "ring-success" : "ring-error" } rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12`}>
                           <Image
                             src={`https://cryptologos.cc/logos/${
                               asset.id
@@ -86,7 +87,8 @@ export default function Home() {
                   </Link>
                 </td>
                 <td className="font-bold">
-                  ${" "}
+                  {" "}
+                  $
                   {!isNaN(parseFloat(asset.priceUsd))
                     ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
                         minimumFractionDigits: 2,
@@ -98,10 +100,17 @@ export default function Home() {
                     Desktop Support Technician
                   </span> */}
                 </td>
-                <td className="font-medium">
+                <td
+                  className={
+                    parseFloat(asset.changePercent24Hr) > 0
+                      ? "font-medium text-green-500"
+                      : "font-medium text-red-600"
+                  }
+                >
                   {!isNaN(parseFloat(asset.changePercent24Hr))
                     ? `${parseFloat(asset.changePercent24Hr).toFixed(2)}`
-                    : "N/A"}
+                    : "N/A"}{" "}
+                  %
                 </td>
                 <td className="font-medium">
                   {!isNaN(parseFloat(asset.supply))
