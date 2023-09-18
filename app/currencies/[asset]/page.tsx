@@ -7,17 +7,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface Asset {
-  id: number;
+  id: string;
   rank: string;
   symbol: string;
   name: string;
-  supply: number;
-  maxSupply: number;
-  marketCapUsd: number;
-  volumeUsd24Hr: number;
+  supply: string;
+  maxSupply: string;
+  marketCapUsd: string;
+  volumeUsd24Hr: string;
   priceUsd: string;
   changePercent24Hr: string;
-  vwap24Hr: number;
+  vwap24Hr: string;
   explorer: string;
 }
 
@@ -27,19 +27,19 @@ export default function AssetPage() {
   const params = useParams();
   // const id = params.get("id") as string;
   // console.log(params.track);
-  const id = params.asset;
+  const uid = params.asset;
 
   const [asset, setAsset] = useState<Asset | null>(null);
 
   useEffect(() => {
     const fetchAsset = async () => {
-      const response = await fetch(`https://api.coincap.io/v2/assets/${id}`);
+      const response = await fetch(`https://api.coincap.io/v2/assets/${uid}`);
       const responseData = await response.json();
       setAsset(responseData.data);
     };
 
     fetchAsset();
-  }, [id]);
+  }, [uid]);
 
   if (!asset) {
     return <Loading />;

@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { number } from "prop-types";
-import Image from "next/image";
-// import Reloader from "@/app/components/reloader";
+// import { useParams } from "next/navigation";
 import Loading from "@/app/components/loading";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Asset {
   id: string;
@@ -22,7 +21,7 @@ interface Asset {
   explorer: string;
 }
 
-export default function Home() {
+export default function Markets() {
   const [assets, setAssets] = useState<Asset[]>([]);
 
   useEffect(() => {
@@ -63,7 +62,7 @@ export default function Home() {
                   <label>{asset.rank}</label>
                 </th>
                 <td>
-                  <Link href={`/currencies/${asset.id}`}>
+                  <Link href={`/markets/${asset.id}`}>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
                         {/* <div className="rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12"> */}

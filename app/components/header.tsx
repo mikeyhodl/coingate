@@ -12,13 +12,13 @@ export default function Test() {
         <div className="navbar-start hidden lg:flex">
           {/* <ul className="menu menu-horizontal px-1"> */}
           {/* <li> */}
-          <a className="btn mr-2">Exchanges</a>
+          <Link href="" className="btn mr-2">Exchanges</Link>
           {/* </li> */}
           {/* <li> */}
-          <a className="btn mr-2">Markets</a>
+          <Link href="/markets" className="btn mr-2">Markets</Link>
           {/* </li> */}
           {/* <li> */}
-          <a className="btn mr-2">History</a>
+          <Link href="" className="btn mr-2">History</Link>
           {/* </li> */}
           {/* </ul> */}
         </div>
