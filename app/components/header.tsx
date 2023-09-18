@@ -1,24 +1,33 @@
 import Link from "next/link";
 
-export default function Test() {
+export default function Header() {
   return (
     <>
       <div className="navbar bg-base-100 sticky top-0 z-30">
-        <div className="flex-1">
+        {/* <div className="flex-1">
           <Link href="/" className="btn btn-glass normal-case text-xl">
             CoinGate
           </Link>
-        </div>
-        <div className="navbar-start hidden lg:flex">
+        </div> */}
+        <div className="navbar-end hidden lg:flex">
           {/* <ul className="menu menu-horizontal px-1"> */}
           {/* <li> */}
-          <Link href="" className="btn mr-2">Exchanges</Link>
+          <Link href="/" className="btn mr-2">
+            Coins
+          </Link>
+          <Link href="/exchanges" className="btn mr-2">
+            Exchanges
+          </Link>
           {/* </li> */}
           {/* <li> */}
-          <Link href="/markets" className="btn mr-2">Markets</Link>
+          <Link href="/markets" className="btn mr-2">
+            Markets
+          </Link>
           {/* </li> */}
           {/* <li> */}
-          <Link href="" className="btn mr-2">History</Link>
+          <Link href="/" className="btn mr-2">
+            History
+          </Link>
           {/* </li> */}
           {/* </ul> */}
         </div>

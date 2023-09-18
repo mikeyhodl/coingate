@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { number } from "prop-types";
 import Image from "next/image";
-// import Reloader from "@/app/components/reloader";
 import Loading from "@/app/components/loading";
 
 interface Asset {
