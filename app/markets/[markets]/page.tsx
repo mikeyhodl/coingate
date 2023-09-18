@@ -47,7 +47,7 @@ export default function MarketPage() {
   }
   return (
     <>
-      <div className="overflow-x-auto bg-base-200">
+      <div className="overflow-x-auto bg-base-200 h-screen">
         <table className="table">
           {/* head */}
           <thead>
