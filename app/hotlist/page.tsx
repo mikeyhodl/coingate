@@ -57,13 +57,16 @@ export default function HotList() {
                 <h2 className="card-title">{asset.name}</h2>
                 <p className="font-medium">Symbol: {asset.symbol}</p>
                 <p className="font-medium">
-                  Price: $
-                  {!isNaN(parseFloat(asset.priceUsd))
-                    ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })
-                    : "N/A"}
+                  Price:
+                  <span className="font-extrabold ml-1">
+                    $
+                    {!isNaN(parseFloat(asset.priceUsd))
+                      ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
+                          minimumFractionDigits: 4,
+                          maximumFractionDigits: 4,
+                        })
+                      : "N/A"}
+                  </span>
                 </p>
                 <p className="font-medium">
                   Change (24Hr):{" "}
