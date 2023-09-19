@@ -37,7 +37,7 @@ export default function HotList() {
 
   // Filter assets where changePercent24Hr is more than 5
   const filteredAssets = assets.filter(
-    (asset) => parseFloat(asset.changePercent24Hr) > 3
+    (asset) => parseFloat(asset.changePercent24Hr) > 1
   );
 
   if (!assets.length) {
@@ -47,11 +47,11 @@ export default function HotList() {
     <>
       <div className="min-h-screen h-max">
         <h1 className="text-3xl font-bold text-center">Coins of The Day</h1>
-        <section className="m-3 grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-2">
+        <section className="m-3 grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-2 overflow-hidden">
           {filteredAssets.map((asset) => (
             <div
               key={asset.id}
-              className="card w-60 h-60 bg-warning text-primary-content m-1"
+              className="card w-64 h-60 bg-warning text-primary-content m-1"
             >
               <div className="card-body">
                 <h2 className="card-title">{asset.name}</h2>
