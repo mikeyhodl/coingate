@@ -16,7 +16,6 @@ export default function Header() {
           <Link href="/markets" className="btn mr-2">
             Markets
           </Link>
-
           <Link href="/hotlist" className="btn mr-2">
             <div style={{ display: "flex", alignItems: "center" }}>
               <span>CoinWatch</span>

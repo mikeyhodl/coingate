@@ -78,7 +78,7 @@ export default function HotList() {
                     href={`https://www.binance.com/en/trade/${asset.symbol.toUpperCase()}_USDT?theme=dark&type=spot`}
                     target="_blank"
                   >
-                    <button className="btn btn-neutral">
+                    <button className="btn btn-sm btn-neutral">
                       Buy {asset.symbol}
                     </button>
                   </a>
