@@ -106,7 +106,7 @@ export default function Exchange() {
                 </td>
                 <td className="font-bold">
                   {" "}
-                  $
+                  
                   {!isNaN(parseFloat(exchange.percentTotalVolume))
                     ? parseFloat(exchange.percentTotalVolume).toLocaleString(
                         undefined,
@@ -115,7 +115,7 @@ export default function Exchange() {
                           maximumFractionDigits: 2,
                         }
                       )
-                    : "N/A"}
+                    : "N/A"}%
                 </td>
                 <td className="font-medium">{exchange.tradingPairs}</td>
                 <a href={exchange.exchangeUrl} target="_blank">
