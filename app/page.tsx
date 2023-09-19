@@ -22,22 +22,12 @@ interface Asset {
 
 export default function Home() {
   const [assets, setAssets] = useState<Asset[]>([]);
-  const [TotalMarketCap, setTotalMarketCap] = useState<number>(0); // Initialize TotalMarketCap with 0
 
   useEffect(() => {
     fetch("https://api.coincap.io/v2/assets")
       .then((response) => response.json())
       .then((data) => {
         setAssets(data.data);
-
-        const totalMarketCap = data.data.reduce(
-          (total: number, asset: Asset) => {
-            return total + parseFloat(asset.marketCapUsd);
-          },
-          0
-        );
-
-        setTotalMarketCap(totalMarketCap);
       });
   }, []);
 
