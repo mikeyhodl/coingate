@@ -59,6 +59,7 @@ export default function Home() {
               <th>Price</th>
               <th>24 Hrs Change %</th>
               <th>Supply</th>
+              <th>Max Supply</th>
               <th>Market Cap</th>
               <th>Volume(24hrs)</th>
             </tr>
@@ -129,6 +130,14 @@ export default function Home() {
                 <td className="font-medium">
                   {!isNaN(parseFloat(asset.supply))
                     ? parseFloat(asset.supply).toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })
+                    : "N/A"}
+                </td>
+                <td className="font-medium">
+                  {!isNaN(parseFloat(asset.maxSupply))
+                    ? parseFloat(asset.maxSupply).toLocaleString(undefined, {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,
                       })
