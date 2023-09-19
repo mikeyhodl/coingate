@@ -74,9 +74,7 @@ export default function Markets() {
                           } rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12`}
                         >
                           <Image
-                            src={`https://cryptologos.cc/logos/${
-                              asset.id
-                            }-${asset.symbol.toLowerCase()}-logo.png`}
+                            src={`https://assets.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`}
                             alt={asset.symbol}
                             height={500}
                             width={500}

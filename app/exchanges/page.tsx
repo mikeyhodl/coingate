@@ -73,7 +73,7 @@ export default function Exchange() {
                           } rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12`}
                         >
                           <Image
-                            src="https://cryptologos.cc/logos/bitcoin-btc-logo.png"
+                            src="https://assets.coincap.io/assets/icons/btc@2x.png"
                             alt={exchange.exchangeId}
                             height={500}
                             width={500}

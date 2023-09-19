@@ -83,10 +83,17 @@ export default function Home() {
                               : "ring-error"
                           } rounded-full ring ring-offset-base-100 ring-offset-1 w-12 h-12`}
                         >
-                          <Image
+                          {/* <Image
                             src={`https://cryptologos.cc/logos/${
                               asset.id
                             }-${asset.symbol.toLowerCase()}-logo.png`}
+                            alt={asset.symbol}
+                            height={500}
+                            width={500}
+                            className="w-20 h-20 bg-zinc-300 rounded-lg dark:bg-zinc-600"
+                          /> */}
+                          <Image
+                            src={`https://assets.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`}
                             alt={asset.symbol}
                             height={500}
                             width={500}

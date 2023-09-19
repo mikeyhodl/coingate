@@ -7,9 +7,9 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cryptologos.cc",
+        hostname: "assets.coincap.io",
         port: "",
-        pathname: "/logos/**",
+        pathname: "/assets/**",
       },
     ],
   },
