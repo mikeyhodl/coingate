@@ -47,7 +47,7 @@ export default function HotList() {
     <>
       <div className="h-screen">
         <h1 className="text-3xl font-bold text-center">Coins of The Day</h1>
-        <section className="m-6 grid grid-cols-6 gap-2">
+        <section className="m-6 grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-6 gap-2">
           {filteredAssets.map((asset) => (
             <div
               key={asset.id}
@@ -57,7 +57,7 @@ export default function HotList() {
                 <h2 className="card-title">{asset.name}</h2>
                 <p className="font-medium">Symbol: {asset.symbol}</p>
                 <p className="font-medium">
-                  Price:{" "}$
+                  Price: $
                   {!isNaN(parseFloat(asset.priceUsd))
                     ? parseFloat(asset.priceUsd).toLocaleString(undefined, {
                         minimumFractionDigits: 2,
