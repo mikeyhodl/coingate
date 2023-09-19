@@ -22,7 +22,12 @@ export default function Footer() {
             Weknow Creators&apos; Inc. <br />
             Providing reliable tech since 2017
           </p>
-          <p>Copyright © 2023 - All right reserved</p>
+          <p className="font-bold text-red-600 animate-pulse">
+            Created with Love for Cypto by{" "}
+            <a href="https://mikeowino.com/" target="_blank">
+              Mikey
+            </a>
+          </p>
         </aside>
       </footer>
     </>
