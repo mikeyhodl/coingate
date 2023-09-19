@@ -37,7 +37,7 @@ export default function HotList() {
 
   // Filter assets where changePercent24Hr is more than 5
   const filteredAssets = assets.filter(
-    (asset) => parseFloat(asset.changePercent24Hr) > 2
+    (asset) => parseFloat(asset.changePercent24Hr) > 3
   );
 
   if (!assets.length) {
