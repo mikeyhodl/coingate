@@ -28,9 +28,7 @@ export default function ExchangePage() {
 
   useEffect(() => {
     const fetchExchange = async () => {
-      const response = await fetch(
-        `https://api.coincap.io/v2/exchanges/${xid}`
-      );
+      const response = await fetch(`${process.env.API_URL}/exchanges/${xid}`);
       const responseData = await response.json();
       setExchange(responseData.data);
     };

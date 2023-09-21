@@ -24,7 +24,7 @@ export default function Home() {
   const [assets, setAssets] = useState<Asset[]>([]);
 
   useEffect(() => {
-    fetch("https://api.coincap.io/v2/assets")
+    fetch(`${process.env.API_URL}/assets`)
       .then((response) => response.json())
       .then((data) => {
         setAssets(data.data);

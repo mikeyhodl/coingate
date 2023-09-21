@@ -29,7 +29,7 @@ export default function MarketPage() {
     const fetchMarketData = async () => {
       try {
         const response = await fetch(
-          `https://api.coincap.io/v2/assets/${mid}/markets`
+          `${process.env.API_URL}/assets/${mid}/markets`
         );
         const responseData = await response.json();
         setMarkets(responseData.data);

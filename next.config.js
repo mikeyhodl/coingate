@@ -2,6 +2,7 @@
 const nextConfig = {};
 
 module.exports = nextConfig;
+
 module.exports = {
   images: {
     remotePatterns: [
@@ -12,5 +13,8 @@ module.exports = {
         pathname: "/assets/**",
       },
     ],
+  },
+  env: {
+    API_URL: "https://api.coincap.io/v2",
   },
 };

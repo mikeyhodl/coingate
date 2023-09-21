@@ -26,7 +26,7 @@ export default function Nav() {
   const [TotalMarketCap, setTotalMarketCap] = useState<number>(0); // Initialize TotalMarketCap with 0
 
   useEffect(() => {
-    fetch("https://api.coincap.io/v2/assets")
+    fetch(`${process.env.API_URL}/assets`)
       .then((response) => response.json())
       .then((data) => {
         setAssets(data.data);

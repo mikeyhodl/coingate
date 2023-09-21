@@ -33,7 +33,7 @@ export default function AssetPage() {
 
   useEffect(() => {
     const fetchAsset = async () => {
-      const response = await fetch(`https://api.coincap.io/v2/assets/${uid}`);
+      const response = await fetch(`${process.env.API_URL}/assets/${uid}`);
       const responseData = await response.json();
       setAsset(responseData.data);
     };
